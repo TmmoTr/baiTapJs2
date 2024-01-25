@@ -1,0 +1,18 @@
+.container{
+    padding: 50px 0;
+    display: flex;
+}
+.exc{
+    padding: 20px;
+    width: 50%;
+}
+.box-msg{
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    min-height: 50px;
+}
+#result-msg1,#result-msg2,#result-msg3,#result-msg4,#result-msg5{
+    margin:0;
+}
