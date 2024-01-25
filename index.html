@@ -12,6 +12,7 @@
         <div class="exc">
             <h4>Bài 1: Quản lý tuyển sinh</h4>
             <form>
+                <h5>Nhập Điểm</h5>
                 <div class="form-group">      
                     <input type="number" class="form-control" id="inputDiem1" placeholder="Nhập điểm thứ 1">
                 </div>
@@ -22,46 +23,37 @@
                     <input type="number" class="form-control" id="inputDiem3" placeholder="Nhập điểm thứ 3">
                 </div>
                 <div class="py-2">
-                <select class="form-control" id="selectKV">
-                    <option>X</option>
-                    <option>A</option>
-                    <option>B</option>
-                    <option>C</option>
-                </select>
+                    <h5>Chọn Khu Vực</h5>
+                    <select class="form-control" id="selectKV">
+                        <option>X</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                    </select>
                 </div>
                 <div class="py-2">
-                <select class="form-control" id="selectDT">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
+                    <h5>Chọn Đối Tượng</h5>
+                    <select class="form-control" id="selectDT">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
                 </div>
-                <button onclick="tinhLuong()" type="button" class="btn btn-primary">Tính</button>
+                <button onclick="tinhDiem()" type="button" class="btn btn-primary" id="Btn1">Tính</button>
                 <div class="box-msg">
                     <p id="result-msg1"></p>
                 </div>
             </form>
         </div>
         <div class="exc">
-            <h4>Bài 2:</h4>
+            <h4>Bài 2: Tính Tiền Điện</h4>
             <form>
+                <h5>Số KW đã dùng</h5>
                 <div class="form-group">      
-                    <input type="number" class="form-control" id="so1st" placeholder="Nhập số thứ 1">
+                    <input type="number" class="form-control" id="soKW" placeholder="Nhập số KW">
                 </div>
-                <div class="form-group">      
-                    <input type="number" class="form-control" id="so2nd" placeholder="Nhập số thứ 2">
-                </div>
-                <div class="form-group">      
-                    <input type="number" class="form-control" id="so3rd" placeholder="Nhập số thứ 3">
-                </div>
-                <div class="form-group">      
-                    <input type="number" class="form-control" id="so4th" placeholder="Nhập số thứ 4">
-                </div>
-                <div class="form-group">      
-                    <input type="number" class="form-control" id="so5th" placeholder="Nhập số thứ 5">
-                </div>
-                <button onclick="TB()" type="button" class="btn btn-primary">Tính</button>
+                <button onclick="tinhTien()" type="button" class="btn btn-primary">Tính</button>
                 <div class="box-msg">
                     <p id="result-msg2"></p>
                 </div>
@@ -70,32 +62,53 @@
     </div>
     <div class="container">
         <div class="exc">
-            <h4>Bài 3:</h4>
+            <h4>Bài 3 Tính Thuế Thu Nhập Cá Nhân:</h4>
             <form>
+                <h5>Họ Và Tên</h5>
                 <div class="form-group">      
-                <input type="number" class="form-control" id="inputUSD" placeholder="Nhập Số Tiền (USD)">
+                <input type="Text" class="form-control" id="name" placeholder="Nhập Họ Và Tên">
                 </div>
-                <h5>1 USD = 23,500 VND</h5>
-                <button onclick="doiTien()" type="button" class="btn btn-primary">Tính</button>
+                <h5>Tổng Thu Nhập</h5>
+                <div class="form-group">      
+                    <input type="number" class="form-control" id="inputTN" placeholder="Nhập Tổng Thu Nhập">
+                </div>
+                <h5>Số Người Phụ Thuộc</h5>
+                <div class="form-group">      
+                    <input type="number" class="form-control" id="inputSN" placeholder="Nhập Số Người Phụ Thuộc ">
+                </div>
+                <button onclick="tinhThue()" type="button" class="btn btn-primary">Tính</button>
                 <div class="box-msg">
                     <p id="result-msg3"></p>
                 </div>
             </form>
         </div>
         <div class="exc">
-            <h4>Bài 4: </h4>
-            <form>
-                <div class="form-group">      
-                    <input type="number" class="form-control" id="chieuDai" placeholder="Nhập Chiều Dài">
-                </div>
-                <div class="form-group">      
-                    <input type="number" class="form-control" id="chieuRong" placeholder="Nhập Chiều Rộng">
-                </div>
-                <button onclick="tinhHCN()" type="button" class="btn btn-primary">Tính</button>
-                <div class="box-msg">
-                    <p id="result-msg4"></p>
-                </div>
-            </form>
+            <h4>Bài 4: Tính Tiền Cáp </h4>
+            <select onchange="ba()" class="form-control" id="selectKH">
+                <option>---Chọn loại khách hàng---</option>
+                <option>Nhà Dân</option>
+                <option>Doanh Nghiệp</option>
+            </select>
+                
+                <form class="py-4">
+                    <div class="form-group">
+                        <h5>Mã Khách Hàng</h5>    
+                        <input type="text" class="form-control" id="KH" placeholder="Nhập Mã Khách Hàng">
+                    </div>
+                    <div class="form-group">
+                        <h5>Số Kênh</h5>      
+                        <input type="number" class="form-control" id="soKenh" placeholder="Nhập Số Kênh">
+                    </div>
+                    <div id="sp" class="form-group kn">
+                        <h5>Số Kết Nối</h5>      
+                        <input type="number" class="form-control" id="soKetNoi" placeholder="Nhập Số Kết Nối">
+                    </div>
+                    <button onclick="tinhCap()" type="button" class="btn btn-primary">Tính</button>
+                    <div class="box-msg">
+                        <p id="result-msg4"></p>
+                    </div>
+                </form>
+
         </div>
     </div>
     <script src="./js/bai1.js"></script>

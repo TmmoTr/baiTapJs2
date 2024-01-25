@@ -16,3 +16,7 @@
 #result-msg1,#result-msg2,#result-msg3,#result-msg4,#result-msg5{
     margin:0;
 }
+
+.kn{
+    display: none;
+}
